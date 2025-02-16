@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focux - The Ultimate Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+        .glass:hover {
+            transform: scale(1.05);
+        }
+        .btn-hover:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-5">
+    <img src="https://educationsimplified.github.io/mgkvp/20250125_115304.png" alt="Focux Logo" class="w-24 h-24 mb-4 animate-pulse">
+    <h1 class="text-4xl font-bold mb-2">Focux - The Ultimate Search</h1>
+    <p class="text-gray-300 text-lg mb-6">A revolutionary search experience by <a href="https://uzairb2b.blogspot.com" class="text-blue-400 hover:underline">UZAIRB2BSERVICES</a></p>
+    
+    <div class="glass w-full max-w-md p-6">
+        <input id="searchQuery" type="text" placeholder="What are you looking for?" class="w-full p-3 rounded-lg bg-gray-800 text-white focus:ring focus:ring-blue-500">
+        <div class="flex justify-between mt-4">
+            <button onclick="searchGoogle()" class="btn-hover w-1/3 p-2 rounded-lg bg-blue-500 hover:bg-blue-700">Google</button>
+            <button onclick="searchYouTube()" class="btn-hover w-1/3 p-2 rounded-lg bg-red-500 hover:bg-red-700">YouTube</button>
+            <button onclick="searchChatGPT()" class="btn-hover w-1/3 p-2 rounded-lg bg-green-500 hover:bg-green-700">ChatGPT</button>
+        </div>
+    </div>
+
+    <script>
+        function searchGoogle() {
+            let query = document.getElementById('searchQuery').value;
+            if (query) window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        }
+
+        function searchYouTube() {
+            let query = document.getElementById('searchQuery').value;
+            if (query) window.location.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+        }
+
+        function searchChatGPT() {
+            let query = document.getElementById('searchQuery').value;
+            if (query) window.location.href = `https://chat.openai.com/?q=${encodeURIComponent(query)}`;
+        }
+    </script>
+</body>
+</html>
